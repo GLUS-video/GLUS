@@ -24,7 +24,7 @@ pip install -r requirements.txt
 pip install flash-attn --no-build-isolation
 ```
 
-## Model Families
+## Model Zoo
 
 ## Training and Validation
 
