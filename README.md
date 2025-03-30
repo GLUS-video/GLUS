@@ -120,6 +120,15 @@ Set the paths in the scripts and then run ``scripts/train_glus_s.sh`` or ``scrip
 
 Set the paths, ``val_set`` and ``set_name`` in ``scripts/inference.sh``, and then run it. It will detect the available GPUs firstly and then individually run parallelizable inference on each gpu.
 
+An example:
+
+```
+python utils/eval_mevis.py \
+  --mevis_exp_path='$GLUS_ROOT/data/mevis/valid_u/meta_expressions.json' \
+  --mevis_mask_path='$GLUS_ROOT/data/mevis/valid_u/mask_dict.json'
+  --mevis_pred_path='$GLUS_ROOT/generated'
+```
+
 After the masks are generated completely, run the corresponding evalaution python file in ``utils``. You may need to set the groundtruth mask path, predicted mask path and expressions json file path. Please refer to the eval files to see the help on arguments.
 
 Specially, to evaluate the performance on ``Refer-YouTube-VOS Valid`` or ``MeViS Valid`` benchmarks, you may need to submit the predicted masks results following the guidance at [MeViS-Evaluation-Server](https://codalab.lisn.upsaclay.fr/competitions/15094) or [RefYoutube-Evaluation-Server](https://codalab.lisn.upsaclay.fr/competitions/3282).
