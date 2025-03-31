@@ -28,7 +28,7 @@ def parse_args(args):
     parser = argparse.ArgumentParser(description="GLUS Model Training")
     parser.add_argument("--local_rank", default=0, type=int, help="node rank")
     parser.add_argument(
-        "--version", default="liuhaotian/llava-llama-2-13b-chat-lightning-preview"
+        "--version", default="xinlai/LISA-7B-v1"
     )
     parser.add_argument("--vis_save_path", default="./vis_output", type=str)
     parser.add_argument(

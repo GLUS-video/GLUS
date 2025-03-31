@@ -28,7 +28,7 @@ from dataset.reasonvos import load_reason_json
 
 def parse_args(args):
     parser = argparse.ArgumentParser(description="GLUS eval")
-    parser.add_argument("--version", default="xinlai/LISA-13B-llama2-v1") # TODO
+    parser.add_argument("--version", default="Swindl/GLUS-A") 
     parser.add_argument("--vis_save_path", default="./generated", type=str)
     parser.add_argument(
         "--precision",
@@ -132,15 +132,11 @@ def main(args):
     kwargs.update({
         "not_use_mem_bank": args.not_use_mem_bank,
     })
-    
-    breakpoint()
 
     model = GLUSForCausalLM.from_pretrained(
         args.version, low_cpu_mem_usage=False, vision_tower=args.vision_tower, seg_token_idx=args.seg_token_idx,
         sam_config=args.sam_config, image_features_num=args.image_features_num, **kwargs
     )
-    
-    breakpoint()
 
     model.config.eos_token_id = tokenizer.eos_token_id
     model.config.bos_token_id = tokenizer.bos_token_id
@@ -385,6 +381,8 @@ def inference_frames(args, model, clip_image_processor, transform, tokenizer, im
         
         input_ids = tokenizer_image_token(prompt, tokenizer, return_tensors="pt")
         input_ids = input_ids.unsqueeze(0).cuda()
+        
+        breakpoint()
     
         output_ids, pred_masks, outputs = model.evaluate(
             images_clip,

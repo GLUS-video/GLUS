@@ -26,6 +26,13 @@ pip install flash-attn --no-build-isolation
 
 ## Model Zoo
 
+| Model                                | Training Datasets               | Base Model   | Download |
+|--------------------------------------|---------------------------------|--------------|----------|
+| **GLUS<sup><i>S</i></sup>**            | MeViS, Ref-Youtube-VOS          | LISA-7B-v1   |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main)        |
+| **GLUS<sup><i>A</i></sup>**            | + RefDAVIS17, ReVOS, LVVIS      | LISA-7B-v1   |  [HuggingFace](https://huggingface.co/Swindl/GLUS-A/tree/main)        |
+
+We recommend to download and store the pretrained weights at ``GLUS_ROOT/checkpoints``.
+
 ## Training and Validation
 
 ### 1. Data Preparation
