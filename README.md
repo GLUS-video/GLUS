@@ -20,7 +20,9 @@
 
 ## Installation
 ```shell
+git clone git@github.com:GLUS-video/GLUS.git && cd GLUS
 pip install -r requirements.txt
+pip install ./model/segment-anything-2
 pip install flash-attn --no-build-isolation
 ```
 
