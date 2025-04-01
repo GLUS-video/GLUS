@@ -381,8 +381,6 @@ def inference_frames(args, model, clip_image_processor, transform, tokenizer, im
         
         input_ids = tokenizer_image_token(prompt, tokenizer, return_tensors="pt")
         input_ids = input_ids.unsqueeze(0).cuda()
-        
-        breakpoint()
     
         output_ids, pred_masks, outputs = model.evaluate(
             images_clip,
