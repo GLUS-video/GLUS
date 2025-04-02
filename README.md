@@ -125,9 +125,16 @@ We recommend to set ``WEIGHTS_ROOT`` to ``GLUS_ROOT/checkpoints``.
 
 Set the paths in the scripts and then run ``scripts/train_glus_s.sh`` or ``scripts/train_glus_a.sh``. The scripts will automatically start the training, and transform the saved checkpoint into hugging-face format when the training finished.
 
+#### Key Frame Selection
+For the usage of key frame selection, please refer to the `KFS` Branch.
+
+
 ### 4. Evaluation
 
 Set the paths, ``val_set`` and ``set_name`` in ``scripts/inference.sh``, and then run it. It will detect the available GPUs firstly and then individually run parallelizable inference on each gpu.
+
+#### Evaluation with Key Frame Selection
+Set the args ``use_kf`` and ``kf_path`` in ``scripts/inference_kf.sh``, and then run it. We provide our json file on Mevis and Refyoutube-VOS for **GLUS<sup><i>S</i></sup>** on the [google drive](https://drive.google.com/drive/folders/1NcjOguZUmal7Xk7rihyhvs5GRK_RzQSO?usp=sharing).
 
 After the masks are generated completely, run the corresponding evalaution python file in ``utils``. You may need to set the groundtruth mask path, predicted mask path and expressions json file path. Please refer to the eval files to see the help on arguments.
 
@@ -140,8 +147,12 @@ python utils/eval_mevis.py \
   --mevis_pred_path='$GLUS_ROOT/generated'
 ```
 
+
+
+
 Specially, to evaluate the performance on ``Refer-YouTube-VOS Valid`` or ``MeViS Valid`` benchmarks, you may need to submit the predicted masks results following the guidance at [MeViS-Evaluation-Server](https://codalab.lisn.upsaclay.fr/competitions/15094) or [RefYoutube-Evaluation-Server](https://codalab.lisn.upsaclay.fr/competitions/3282).
 
 ## Inference and Demo
 
 Please refer to ``demo.ipynb`` to inference on your own videos and referrings.
+

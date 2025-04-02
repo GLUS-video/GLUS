@@ -29,6 +29,8 @@ from dataset.reasonvos import load_reason_json
 def parse_args(args):
     parser = argparse.ArgumentParser(description="GLUS eval")
     parser.add_argument("--version", default="Swindl/GLUS-A") 
+    parser.add_argument("--use_kf", action="store_true", default=False)
+    parser.add_argument("--score_json", default=None, type=str)
     parser.add_argument("--vis_save_path", default="./generated", type=str)
     parser.add_argument(
         "--precision",
@@ -223,6 +225,19 @@ def inference_video(args, model, clip_image_processor, transform, tokenizer):
         return None
     target_obj = target_obj[:-1] if target_obj[-1] == '.' else target_obj
     
+    max_index = 0
+    if args.use_kf and args.score_json is not None:
+        with open(args.score_json, 'r') as f:
+            score_json = json.load(f)
+        cur_key = dataset_settings['vid_name'] + '_' + dataset_settings['exp_id']
+        if cur_key not in score_json:
+            max_index = 0
+        else:
+            cur_fname = int(score_json[cur_key])
+            all_fnames = [int(x.split(".")[0]) for x in mask_name]
+            all_fnames.sort()
+            max_index = all_fnames.index(cur_fname)
+        
     context_frame_num = args.context_frame_num
     question_frame_num = args.question_frame_num
     
@@ -235,10 +250,11 @@ def inference_video(args, model, clip_image_processor, transform, tokenizer):
         for j in range(context_frame_num):
             curr_frame_clips.append(min(indices[j] + i, indices[j + 1] - 1))
         frame_clips.append(curr_frame_clips)
-        
+    
+    #forward inference process   
     for idx in range(len(frame_clips) // 2, len(frame_clips) // 2 + 1):
         
-        total_frame_list = frame_clips[idx] + list(range(frame_num))
+        total_frame_list = frame_clips[idx] + list(range(frame_num))[max_index:]
         
         text_output, mask_scores, masks_list, _ = inference_frames(args, model, 
                                                                clip_image_processor = clip_image_processor, 
@@ -247,7 +263,7 @@ def inference_video(args, model, clip_image_processor, transform, tokenizer):
                                                                image_paths = [image_paths[i] for i in total_frame_list], 
                                                                target_obj = target_obj)
         
-        assert len(masks_list) == len(mask_name)
+        assert len(masks_list) == len(mask_name) - max_index
         for i in range(len(masks_list)):
             
             assert masks_list[i].shape[0] == 1
@@ -258,13 +274,52 @@ def inference_video(args, model, clip_image_processor, transform, tokenizer):
                 mask_np = mask_tensor.cpu().numpy()
                 mask_np = (mask_np * 255).astype(np.uint8) 
                 mask_img = Image.fromarray(mask_np)
-                        
+                
+                index = max_index + i            
                 saved_path = f'{args.vis_save_path}/{dataset_settings["vid_name"]}/{dataset_settings["exp_id"]}/{mask_name[i].split(".")[0]}.png'
                 dir_path = os.path.dirname(saved_path)
                 if not os.path.exists(dir_path):
                     os.makedirs(dir_path)
                 mask_img.save(saved_path)
+    
+    if max_index == 0:
+        return True
+              
+    #backward inference process
+    for idx in range(len(frame_clips) // 2, len(frame_clips) // 2 + 1):
+        
+
+        back_index = list(range(frame_num))[:max_index + 1]
+        back_index = back_index[::-1]
+        total_frame_list = frame_clips[idx] + back_index
+        
+        text_output, mask_scores, masks_list, _ = inference_frames(args, model, 
+                                                               clip_image_processor = clip_image_processor, 
+                                                               transform = transform,
+                                                               tokenizer = tokenizer,
+                                                               image_paths = [image_paths[i] for i in total_frame_list], 
+                                                               target_obj = target_obj)
+        
+        assert len(masks_list) == max_index + 1
+        for i in range(len(masks_list)):
+            
+            assert masks_list[i].shape[0] == 1
+            
+            for j in range(masks_list[i].shape[0]):
                 
+                mask_tensor = masks_list[i][j]
+                mask_np = mask_tensor.cpu().numpy()
+                mask_np = (mask_np * 255).astype(np.uint8) 
+                mask_img = Image.fromarray(mask_np)
+
+                #backforward index
+                index = max_index - i
+                saved_path = f'{args.vis_save_path}/{dataset_settings["vid_name"]}/{dataset_settings["exp_id"]}/{int(mask_name[index].split(".")[0]):05d}.png'
+                dir_path = os.path.dirname(saved_path)
+                if not os.path.exists(dir_path):
+                    os.makedirs(dir_path)
+                mask_img.save(saved_path)
+                        
     return True
     
         
