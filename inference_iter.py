@@ -29,6 +29,7 @@ from dataset.reasonvos import load_reason_json
 def parse_args(args):
     parser = argparse.ArgumentParser(description="GLUS eval")
     parser.add_argument("--version", default="Swindl/GLUS-A") 
+    parser.add_argument("--dataset_dir", default='./data', type=str)
     parser.add_argument("--use_kf", action="store_true", default=False)
     parser.add_argument("--score_json", default=None, type=str)
     parser.add_argument("--vis_save_path", default="./generated", type=str)
@@ -183,15 +184,15 @@ def main(args):
 def get_frame_paths_and_target_obj(args):
     
     if args.val_set == "mevis":
-        vid_list, metas, _ = load_mevis_json('/projects/bczp/llin5/data', set_name=args.set_name)
+        vid_list, metas, _ = load_mevis_json(args.dataset_dir, set_name=args.set_name)
     elif args.val_set == "refyoutube_vos":
-        vid_list, metas, _ = load_refyoutube_json('/projects/bczp/llin5/data', set_name=args.set_name)
+        vid_list, metas, _ = load_refyoutube_json(args.dataset_dir, set_name=args.set_name)
     elif args.val_set == "revos":
-        vid_list, metas, _ = load_revos_json('/work/hdd/bczp/llin5/data', set_name=args.set_name)
+        vid_list, metas, _ = load_revos_json(args.dataset_dir, set_name=args.set_name)
     elif args.val_set == 'davis17':
-        vid_list, metas, _ = load_davis17_json('/work/hdd/bczp/llin5/data', set_name=args.set_name)
+        vid_list, metas, _ = load_davis17_json(args.dataset_dir, set_name=args.set_name)
     elif args.val_set == 'reasonvos':
-        vid_list, metas, _ = load_reason_json('/work/hdd/bczp/llin5/data', set_name=args.set_name)
+        vid_list, metas, _ = load_reason_json(args.dataset_dir, set_name=args.set_name)
     else:
         raise ValueError()
     vid2refs = {}

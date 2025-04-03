@@ -6,6 +6,7 @@ DIR_PATH=''
 
 MODEL_PATH=$DIR_PATH/outputs/model
 VIS_SAVE_PATH=$DIR_PATH/generated
+PATH_TO_DATA=$DIR_PATH/data
 
 NUM_GPUS=$(nvidia-smi -L | wc -l)
 echo "Detected $NUM_GPUS GPUs"
@@ -16,6 +17,7 @@ do
     CUDA_VISIBLE_DEVICES=$GPU_ID python inference_iter.py \
         --version "$MODEL_PATH" \
         --vis_save_path "$VIS_SAVE_PATH" \
+        --dataset_dir "$PATH_TO_DATA" \
         --val_set='mevis' \
         --set_name='valid_u' \
         --context_frame_num 4 \
