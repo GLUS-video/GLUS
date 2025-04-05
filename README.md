@@ -126,7 +126,7 @@ We recommend to set ``WEIGHTS_ROOT`` to ``GLUS_ROOT/checkpoints``.
 Set the paths in the scripts and then run ``scripts/train_glus_s.sh`` or ``scripts/train_glus_a.sh``. The scripts will automatically start the training, and transform the saved checkpoint into hugging-face format when the training finished.
 
 #### Key Frame Selection
-For the usage of key frame selection, please refer to the `KFS` Branch.
+For the usage of key frame selection, please refer to the [KFS_README](kfs/README.md).
 
 
 ### 4. Evaluation
@@ -155,4 +155,7 @@ Specially, to evaluate the performance on ``Refer-YouTube-VOS Valid`` or ``MeViS
 ## Inference and Demo
 
 Please refer to ``demo.ipynb`` to inference on your own videos and referrings.
+
+
+## Acknowledgement
 
