@@ -158,4 +158,8 @@ Please refer to ``demo.ipynb`` to inference on your own videos and referrings.
 
 
 ## Acknowledgement
-
+We thank the contributors to the following open-source projects.  Our project is impossible without the inspirations from these excellent researchers.
+* [LISA](https://github.com/dvlab-research/LISA)
+* [SAM2](https://github.com/facebookresearch/sam2)
+* [Mevis](https://github.com/henghuiding/MeViS)
+* [VISA](https://github.com/cilinyan/VISA)
