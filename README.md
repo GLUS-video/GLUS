@@ -15,7 +15,7 @@
 
 
 <div align=center>
-<img src="assets/pipeline_00.png" style="width:100%;">
+<img src="assets/teaserfig.png" style="width:100%;">
 </div>
 
 ## Overview
@@ -29,7 +29,7 @@
 📌 **GLUS is simple.** It elegantly integrates the approach for complex-scenario RefVOS tasks within a single MLLM framework, eliminating the necessity of utilizing other independent modules.
 
 <div align=center>
-<img src="assets/teaserfig.png" style="width:100%;">
+<img src="assets/pipeline_00.png" style="width:100%;">
 </div>
 
 ## News
@@ -168,14 +168,19 @@ python utils/eval_mevis.py \
   --mevis_pred_path='$GLUS_ROOT/generated'
 ```
 
-
-
-
 Specially, to evaluate the performance on ``Refer-YouTube-VOS Valid`` or ``MeViS Valid`` benchmarks, you may need to submit the predicted masks results following the guidance at [MeViS-Evaluation-Server](https://codalab.lisn.upsaclay.fr/competitions/15094) or [RefYoutube-Evaluation-Server](https://codalab.lisn.upsaclay.fr/competitions/3282).
 
 ## Inference and Demo
 
-Please refer to ``demo.ipynb`` to inference on your own videos and referrings.
+Please refer to ``demo.ipynb`` to inference on your own videos and referrings. An example is shown below.
+
+Referring: The panda that has stayed in place with little movement.
+
+Raw video: ![Video Demo](./demo/video.mp4)
+
+Segmentation results: ![Segmentation Demo](./demo/masked_video.mp4)
+
+For more examples, please refer to our [Project Page](https://glus-video.github.io/).
 
 
 ## Acknowledgement
