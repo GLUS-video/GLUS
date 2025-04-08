@@ -176,17 +176,7 @@ Please refer to ``demo.ipynb`` to inference on your own videos and referrings. A
 
 Referring: The panda that has stayed in place with little movement.
 
-Raw video: 
-<div class="col-md-4 text-center">
-  <video autoplay muted loop playsinline width="100%">
-    <source src="./demo/video.mp4" type="video/mp4"/>
-  </video>
-</div>
-
-Segmentation results: ![Segmentation Demo](https://github.com/user-attachments/assets/4cb69c03-0196-45b7-ad70-22c8dad5f6b0)
-
 For more examples, please refer to our [Project Page](https://glus-video.github.io/).
-
 
 ## Acknowledgement
 We thank the contributors to the following open-source projects.  Our project is impossible without the inspirations from these excellent researchers.
