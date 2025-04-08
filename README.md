@@ -22,11 +22,11 @@
 
 **RefVOS in complex scenarios** places high demands on models' video understanding and fine-grained localization capabilities. Recently, numerous models leveraging **MLLM-based** comprehension and reasoning abilities have been proposed to address this challenge. Our **GLUS** advances further along this methodological path.
 
-🚀 **GLUS is principled.** It integrates global-local reasoning to combine holistic video understanding with detailed frames understanding, unleashing the potential of fine-grained segmentation in complex scenarios.
+🚀 **GLUS is principled.** It utilizes global-local reasoning to combine holistic video understanding with detailed frames understanding, unleashing the potential of fine-grained segmentation in complex scenarios.
 
 ✨ **GLUS is powerful.** It unifies the methods of memory bank, object contrastive learning and key frame selection to tackle the problems of mask inconsistency and object obfuscation, achieving state-of-the-art performance in complex-scenario RefVOS tasks.
 
-📌 **GLUS is simple.** It elegantly unifies the approach for complex-scenario RefVOS tasks within a single MLLM framework, eliminating the necessity of utilizing other independent modules.
+📌 **GLUS is simple.** It elegantly integrates the approach for complex-scenario RefVOS tasks within a single MLLM framework, eliminating the necessity of utilizing other independent modules.
 
 <div align=center>
 <img src="assets/teaserfig.png" style="width:100%;">
