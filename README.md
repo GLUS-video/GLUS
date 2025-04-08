@@ -18,6 +18,22 @@
 <img src="assets/pipeline_00.png" style="width:100%;">
 </div>
 
+## Overview
+
+**RefVOS in complex scenarios** places high demands on models' video understanding and fine-grained localization capabilities. Recently, numerous models leveraging **MLLM-based** comprehension and reasoning abilities have been proposed to address this challenge. Our **GLUS** advances further along this methodological path.
+
+🚀 **GLUS is principled.** It integrates global-local reasoning to combine holistic video understanding with detailed frames understanding, unleashing the potential of fine-grained segmentation in complex scenarios.
+
+✨ **GLUS is powerful.** It unifies the methods of memory bank, object contrastive learning and key frame selection to tackle the problems of mask inconsistency and object obfuscation, achieving state-of-the-art performance in complex-scenario RefVOS tasks.
+
+📌 **GLUS is simple.** It elegantly unifies the approach for complex-scenario RefVOS tasks within a single MLLM framework, eliminating the necessity of utilizing other independent modules.
+
+<div align=center>
+<img src="assets/teaserfig.png" style="width:100%;">
+</div>
+
+## News
+
 ## Installation
 ```shell
 git clone git@github.com:GLUS-video/GLUS.git && cd GLUS
@@ -32,7 +48,7 @@ For more convenient following, we provide the checkpoints of GLUS without object
 
 | Model                           | Training Datasets          | Methods             | Download |  MeViS J\&F | Ref-Youtube-VOS J\&F |
 |--------------------------------------|---------------------------------|--------------|----------|-----------|-----------------------|
-| **GLUS<sup><i>S</i></sup><sub>partial</sub>** | MeViS, Ref-Youtube-VOS          | GLU + MB |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S/files)        | 49.5 | 65.2 |
+| **GLUS<sup><i>S</i></sup><sub>partial</sub>** | MeViS, Ref-Youtube-VOS          | GLU + MB |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S-partial/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S-partial/files)        | 49.5 | 65.2 |
 | **GLUS<sup><i>S</i></sup>**            | MeViS, Ref-Youtube-VOS          | GLU + MB + OC + KFS |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S/files)        | 50.3 | 66.6 |
 | **GLUS<sup><i>A</i></sup>**            | + RefDAVIS17, ReVOS, LVVIS      | GLU + MB |  [HuggingFace](https://huggingface.co/Swindl/GLUS-A/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-A/files)        | 51.3 | 67.3 |
 
