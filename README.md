@@ -30,7 +30,7 @@ pip install flash-attn==2.6.2 --no-build-isolation
 
 For more convenient following, we provide the checkpoints of GLUS without object contrastive learning.
 
-| Model                           | Training Datasets          | Methods             | Download |  MeViS $\mathcal{J} \& \mathcal{F}$ | Ref-Youtube-VOS $\mathcal{J} \& \mathcal{F}$ |
+| Model                           | Training Datasets          | Methods             | Download |  MeViS J\&F | Ref-Youtube-VOS J\&F |
 |--------------------------------------|---------------------------------|--------------|----------|-----------|-----------------------|
 | **GLUS<sup><i>S</i></sup><sub>partial</sub>** | MeViS, Ref-Youtube-VOS          | GLU + MB |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S/files)        | 49.5 | 65.2 |
 | **GLUS<sup><i>S</i></sup>**            | MeViS, Ref-Youtube-VOS          | GLU + MB + OC + KFS |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S/files)        | 50.3 | 66.6 |
