@@ -172,9 +172,7 @@ Specially, to evaluate the performance on ``Refer-YouTube-VOS Valid`` or ``MeViS
 
 ## Inference and Demo
 
-Please refer to ``demo.ipynb`` to inference on your own videos and referrings. An example is shown below.
-
-Referring: The panda that has stayed in place with little movement.
+Please refer to ``demo.ipynb`` to inference on your own videos and referrings.
 
 For more examples, please refer to our [Project Page](https://glus-video.github.io/).
 
