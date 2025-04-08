@@ -176,7 +176,12 @@ Please refer to ``demo.ipynb`` to inference on your own videos and referrings. A
 
 Referring: The panda that has stayed in place with little movement.
 
-Raw video: ![Video Demo](./demo/video.mp4)
+Raw video: 
+<div class="col-md-4 text-center">
+  <video autoplay muted loop playsinline width="100%">
+    <source src="./demo/video.mp4" type="video/mp4"/>
+  </video>
+</div>
 
 Segmentation results: ![Segmentation Demo](https://github.com/user-attachments/assets/4cb69c03-0196-45b7-ad70-22c8dad5f6b0)
 
