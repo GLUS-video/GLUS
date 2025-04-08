@@ -23,15 +23,20 @@
 git clone git@github.com:GLUS-video/GLUS.git && cd GLUS
 pip install -r requirements.txt
 pip install ./model/segment-anything-2
-pip install flash-attn --no-build-isolation
+pip install flash-attn==2.6.2 --no-build-isolation
 ```
 
 ## Model Zoo
 
-| Model                                | Training Datasets               | Base Model   | Download |
-|--------------------------------------|---------------------------------|--------------|----------|
-| **GLUS<sup><i>S</i></sup>**            | MeViS, Ref-Youtube-VOS          | LISA-7B-v1   |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S/files)        |
-| **GLUS<sup><i>A</i></sup>**            | + RefDAVIS17, ReVOS, LVVIS      | LISA-7B-v1   |  [HuggingFace](https://huggingface.co/Swindl/GLUS-A/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-A/files)        |
+For more convenient following, we provide the checkpoints of GLUS without object contrastive learning.
+
+| Model                           | Training Datasets          | Methods             | Download |  MeViS $\mathcal{J}$\&$\mathcal{F}$ | Refer-Youtube-VOS $\mathcal{J}$\&$\mathcal{F}$ |
+|--------------------------------------|---------------------------------|--------------|----------|-----------|-----------------------|
+| **GLUS<sup><i>S</i></sup><sub>partial</sub>** | MeViS, Ref-Youtube-VOS          | GLU + MB |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S/files)        | 49.5 | 65.2 |
+| **GLUS<sup><i>S</i></sup>**            | MeViS, Ref-Youtube-VOS          | GLU + MB + OC + KFS |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S/files)        | 50.3 | 66.6 |
+| **GLUS<sup><i>A</i></sup>**            | + RefDAVIS17, ReVOS, LVVIS      | GLU + MB |  [HuggingFace](https://huggingface.co/Swindl/GLUS-A/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-A/files)        | 51.3 | 67.3 |
+
+Notes: “GLU”: Global-local unification, “MB”: End-to-end memory bank, “OC”: Object contrastive loss, “KFS”: key frame selection.
 
 We recommend to download and store the pretrained weights at ``GLUS_ROOT/checkpoints``.
 
