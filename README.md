@@ -178,7 +178,7 @@ Referring: The panda that has stayed in place with little movement.
 
 Raw video: ![Video Demo](./demo/video.mp4)
 
-Segmentation results: ![Segmentation Demo](https://github.com/user-attachments/assets/f150df10-36ab-496c-9137-30e3f174fa17)
+Segmentation results: ![Segmentation Demo](https://github.com/user-attachments/assets/4cb69c03-0196-45b7-ad70-22c8dad5f6b0)
 
 For more examples, please refer to our [Project Page](https://glus-video.github.io/).
 
