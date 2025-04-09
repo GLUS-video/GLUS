@@ -11,7 +11,7 @@
 [[`Project Page`](https://glus-video.github.io/)] [[`arXiv(Coming soon)`]()]
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-Coming Soon-A42C25?style=flat&logo=arXiv&logoColor=A42C25)]()
+[![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-A42C25?style=flat&logo=arXiv&logoColor=A42C25)]()
 [![Project](https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=green)](https://glus-video.github.io/) 
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Model-yellow?style=flat&logo=HuggingFace&logoColor=yellow)](https://huggingface.co/Swindl/GLUS-A)
 
