@@ -179,7 +179,16 @@ Specially, to evaluate the performance on ``Refer-YouTube-VOS Valid`` or ``MeViS
 Please refer to ``demo.ipynb`` to inference on your own videos and referrings.
 
 For more examples, please refer to our [Project Page](https://glus-video.github.io/).
-
+## Citation
+If you find this work useful in your research, please consider citing:
+```bibtex
+@inproceedings{lin2025glus,
+  title={GLUS: Global-Local Reasoning Unified into A Single Large Language Model for Video Segmentation},
+  author={Lang, Lin and Yu, Xueyang and Pang, Ziqi and Wang, Yu-Xiong},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2025}
+}
+```
 ## Acknowledgement
 We thank the contributors to the following open-source projects.  Our project is impossible without the inspirations from these excellent researchers.
 * [LISA](https://github.com/dvlab-research/LISA)
