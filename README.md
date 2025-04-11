@@ -8,10 +8,10 @@
   </p>
 </div>
 
-[[`Project Page`](https://glus-video.github.io/)] [[`arXiv(Coming soon)`]()]
+[[`Project Page`](https://glus-video.github.io/)] [[`arXiv`](https://arxiv.org/abs/2504.07962)]
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-A42C25?style=flat&logo=arXiv&logoColor=A42C25)]()
+[![arXiv](https://img.shields.io/badge/arXiv-2504.07962-A42C25?style=flat&logo=arXiv&logoColor=A42C25)](https://arxiv.org/abs/2504.07962)
 [![Project](https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=green)](https://glus-video.github.io/) 
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Model-yellow?style=flat&logo=HuggingFace&logoColor=yellow)](https://huggingface.co/Swindl/GLUS-A)
 
@@ -55,7 +55,8 @@ For more convenient following, we provide the checkpoints of GLUS without object
 | **GLUS<sup><i>S</i></sup>**            | MeViS, Ref-Youtube-VOS          | GLU + MB + OC + KFS |  [HuggingFace](https://huggingface.co/Swindl/GLUS-S/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-S/files)        | 50.3 | 66.6 |
 | **GLUS<sup><i>A</i></sup>**            | + RefDAVIS17, ReVOS, LVVIS      | GLU + MB |  [HuggingFace](https://huggingface.co/Swindl/GLUS-A/tree/main), [ModelScope](https://www.modelscope.cn/models/LangLin/GLUS-A/files)        | 51.3 | 67.3 |
 
-Notes: “GLU”: Global-local unification, “MB”: End-to-end memory bank, “OC”: Object contrastive loss, “KFS”: key frame selection.
+**Notes**: “GLU”: Global-local unification, “MB”: End-to-end memory bank, “OC”: Object contrastive loss, “KFS”: key frame selection.
+      GLUS<sup><i>S</i></sup> refers to the model trained on a subset of existing RefVOS datasets (Mevis and Ref-Youtube-VOS), while GLUS<sup><i>A</i></sup> denotes the model trained on the full set of available datasets.
 
 We recommend to download and store the pretrained weights at ``GLUS_ROOT/checkpoints``.
 
