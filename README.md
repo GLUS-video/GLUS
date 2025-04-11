@@ -184,7 +184,7 @@ If you find this work useful in your research, please consider citing:
 ```bibtex
 @inproceedings{lin2025glus,
   title={GLUS: Global-Local Reasoning Unified into A Single Large Language Model for Video Segmentation},
-  author={Lang, Lin and Yu, Xueyang and Pang, Ziqi and Wang, Yu-Xiong},
+  author={Lin, Lang and Yu, Xueyang and Pang, Ziqi and Wang, Yu-Xiong},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2025}
 }
