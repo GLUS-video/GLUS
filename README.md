@@ -161,7 +161,7 @@ Set the paths, ``val_set`` and ``set_name`` in ``scripts/inference.sh``, and the
 #### Evaluation with Key Frame Selection
 Set the args ``use_kf`` and ``kf_path`` in ``scripts/inference_kf.sh``, and then run it. We provide our json file on Mevis and Refyoutube-VOS for **GLUS<sup><i>S</i></sup>** on the [google drive](https://drive.google.com/drive/folders/1NcjOguZUmal7Xk7rihyhvs5GRK_RzQSO?usp=sharing).
 
-After the masks are generated completely, run the corresponding evalaution python file in ``utils``. You may need to set the groundtruth mask path, predicted mask path and expressions json file path. Please refer to the eval files to see the help on arguments.
+After the masks are generated completely, run the corresponding evaluation python file in ``utils``. You may need to set the groundtruth mask path, predicted mask path and expressions json file path. Please refer to the eval files to see the help on arguments.
 
 An example:
 
