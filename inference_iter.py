@@ -462,7 +462,7 @@ def inference_frames(args, model, clip_image_processor, transform, tokenizer, im
         text_output = text_output.replace("\n", "").replace("  ", " ")
         
         if pred_masks == None and outputs == None:
-            print(f"Failed to generate image {i - 1} in current video. Auto-fill an [SEG] and while mask here.")
+            print(f"Failed to generate image {i - 1} in current video. Auto-fill an [SEG] and blank mask here.")
             conv.messages[-1][-1] += '[SEG] .'
             mask = torch.zeros(original_size_list[-1])
             masks_list.append(mask.unsqueeze(0))

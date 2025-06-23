@@ -655,7 +655,7 @@ class GLUSForCausalLM(LlavaLlamaForCausalLM):
                     
             if col_idx != per_batch_mask_length:
                 print('{} != {}'.format(col_idx, per_batch_mask_length))
-                return output_ids, None, None, None
+                return output_ids, None, None
                 
             seg_token_mask = _seg_token_mask
             
